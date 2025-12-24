@@ -14,7 +14,7 @@ struct Location
 
 struct Config
 {
-    int host;
+    std::string host;
     std::string port;
     std::map<std::string, std::string> pages;
     std::vector<Location> locations;

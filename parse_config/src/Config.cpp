@@ -32,7 +32,7 @@ std::vector<Config> parserConfig(const std::string& filename)
 	// single config file to lisetn
     Config currentServer;
 
-	// single location
+	// single location, route
     Location currentLocation;
 
 	// block is state or server

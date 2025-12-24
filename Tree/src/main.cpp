@@ -5,9 +5,18 @@ int main()
 	
 
 	//Tree<int> t(x);
-	BinaryTree<int> root;
-	root.FillBinary();
+	BinaryTree<int> btree;
+	btree.FillBinary();
 
-	root.printfPreOrder();
-	std::cout << "----------------->" << std::endl;
+	btree.printfPreOrder();
+	std::cout << "----------------->in order: " ;
+	btree.inorder();
+	std::cout << std::endl;
+	
+	std::cout << "\n----------------->postorder: " ;
+	btree.postorder();
+
+	std::cout << "\n----------------->height: " ;
+	std::cout << btree.height() <<std::endl;
+	std::cout << std::endl;
 }
