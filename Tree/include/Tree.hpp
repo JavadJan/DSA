@@ -48,11 +48,15 @@ class BinaryTree{
 		int count(Node<T> *p);
 		int sum(Node<T> *p);
 		int countLeaf(Node<T> *p);
+		int height(Node<T> *p);
 		void preorder(Node<T>* node);
 		void postorder(Node<T>* node);
 		void inorder(Node<T>* node);
+		/* 
+			* here I have declared as protected because those will be defined as recursive
+			* the user just calls obj.inorder(), it is using internal API.
+		*/
 	public:
-		int height(Node<T> *p);
 		BinaryTree();
 		virtual ~BinaryTree();
 		void FillBinary();
@@ -74,7 +78,11 @@ class BinaryTree{
 		
 };
 
-
+/*8888888888888888888888888888888888*/
+/*									*/
+/*		DEFINE BST			*/
+/*									*/
+/*8888888888888888888888888888888888*/
 template <typename T>
 class BST : public BinaryTree<T>
 {
@@ -102,6 +110,11 @@ class BST : public BinaryTree<T>
 };
 
 // AVL is a BST, so it can inhertis from BST
+/*8888888888888888888888888888888888*/
+/*									*/
+/*			DEFINE AVL Tree			*/
+/*									*/
+/*8888888888888888888888888888888888*/
 template <typename T>
 class AVL : public BST<T>
 {

@@ -32,7 +32,7 @@ class tree_bag : virtual public bag
 		// constructor destructor
 		tree_bag();
 		tree_bag(const tree_bag&);
-		~tree_bag();
+		virtual ~tree_bag();
 		
 		// overload
 		tree_bag& operator=(const tree_bag&);

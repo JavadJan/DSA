@@ -42,4 +42,5 @@ int main()
 		printf("%d ", A[i]);
 	}
 	printf("\n");
+	BubbleSort(A, 12);
 }

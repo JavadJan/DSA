@@ -1,5 +1,10 @@
 #include "./Tree.hpp"
 
+/*8888888888888888888888888888888888*/
+/*									*/
+/*			DEFINE NODE				*/
+/*									*/
+/*8888888888888888888888888888888888*/
 template <typename T>
 Node<T>::Node():left(NULL),right(NULL), height(1){
 
@@ -74,7 +79,11 @@ Node<T>* Node<T>::getRight() const
 	return right;
 }
 
-// fill tree
+/*8888888888888888888888888888888888*/
+/*									*/
+/*		DEFINE Binary Tree			*/
+/*									*/
+/*8888888888888888888888888888888888*/
 template <typename T>
 BinaryTree<T>::BinaryTree():root(nullptr)
 {
@@ -87,7 +96,7 @@ BinaryTree<T>::~BinaryTree()
 
 }
 
-
+// here I use a helper Q to track level by level and fill child with last pop
 template <typename T>
 void BinaryTree<T>::FillBinary()
 {
@@ -299,11 +308,11 @@ int BinaryTree<T>::sum()
 	return (sum(this->root));
 }
 
-// why the Binary tree has alreay the root and height must tale the root as param?
+// why the Binary tree has already the root and height must tale the root as param?
 /* 
 	in desing patter the tree.hight() is correct but the tree.height(root) is false?
 	passing the root does not make sense!
-	so we use from internal heppler and publick API
+	so we use from internal heppler and public API
 	private:
 		height(Tree<T> *p)
 	public: // public API
@@ -337,9 +346,11 @@ int BinaryTree<T>::height()
 
 /* BST: insert, build, remove */
 //void BST<T>::fil
-//--------------------------#
-//			BST				#
-//--------------------------#
+/*8888888888888888888888888888888888*/
+/*									*/
+/*			DEFINE BST				*/
+/*									*/
+/*8888888888888888888888888888888888*/
 template <typename T>
 BST<T>::BST():BinaryTree<T>()
 {
@@ -447,6 +458,11 @@ Node<T>* BST<T>::Rsearch(int key)
 }
 
 // left most leaf
+/*8888888888888888888888888888888888*/
+/*									*/
+/*			DEFINE AVL Tree			*/
+/*									*/
+/*8888888888888888888888888888888888*/
 template <typename T>
 Node<T> *BST<T>::InPre(Node<T> *node)
 {
