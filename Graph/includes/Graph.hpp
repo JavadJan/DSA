@@ -2,12 +2,13 @@
 #define GRAPH_HPP
 #include <vector>
 #include <iostream>
+#include <queue>
 
 template <typename T>
 class Graph {
 	private:
 		std::vector<std::vector<T> > G;
-		int v;
+		int V;
 	public:
 		Graph(int v, std::vector<std::vector<T> > &edges);
 		~Graph();
@@ -15,6 +16,8 @@ class Graph {
 		Graph& operator=(const Graph& b);
 
 
+		std::vector<int> bfs(int start);
+		std::vector<int> dfs(int start);
 		int getV();
 		const std::vector<std::vector<T> >& getG()const;
 

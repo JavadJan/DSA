@@ -13,8 +13,22 @@ int main()
 		
 	//	std::cout << std::endl;
 	//}
-	std::vector<std::vector<int> > edges = {{0, 1},{0, 2},{1, 2}};
-	Graph g(3, edges);
+	std::vector<std::vector<int> > edges = {{0, 0, 0, 0, 0, 0, 0, 0},  // 0
+											{0, 0, 1, 1, 1, 0, 0, 0}, // 1
+											{0, 1, 0, 1, 0, 0, 0, 0}, // 2
+											{0, 1, 1, 0, 1, 1, 0, 0}, // 3
+											{0, 1, 0, 1, 0, 1, 0, 0}, // 4
+											{0, 0, 0, 1, 1, 0, 1, 1},
+											{0, 0, 0, 0, 0, 1, 0, 0},
+											{0, 0, 0, 0, 0, 1, 0, 0},
+											};
+	Graph<int> g(7, edges);
+	std::vector<int> res = g.bfs(1);
+	for (size_t i = 0; i < res.size(); i++)
+	{
+		std::cout << res[i] << " " ;
+	}
+	std::cout << std::endl;
 	std::cout << g << std::endl;
 	return 0;
 }
