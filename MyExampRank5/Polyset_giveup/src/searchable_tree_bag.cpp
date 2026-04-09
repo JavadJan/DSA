@@ -15,17 +15,31 @@ searchable_tree_bag& searchable_tree_bag::operator=(const searchable_tree_bag& o
 
 bool searchable_tree_bag::has_recursive(tree_bag::Node* root, int key) const
 {
-	if (!root)
-		return false;
-	if (root->val == key)
-		return true;
-	if (key < root->val)
-		return has_recursive(root->left, key);
-	else
-		return has_recursive(root->right, key);
+	tree_bag::Node* current = root;
+	while (current != nullptr)
+	{
+		if (current->val == key)
+			return true;
+		if (key < current->val)
+			current = current->left;
+		else
+			current = current->right;
+	}
+	return false;
 }
 
 bool searchable_tree_bag::has(int key) const
 {
-	return this->has_recursive(this->root, key);
+	// return this->has_recursive(this->root, key);
+	tree_bag::Node* current = root;
+	while (current != nullptr)
+	{
+		if (current->val == key)
+			return true;
+		if (key < current->val)
+			current = current->left;
+		else
+			current = current->right;
+	}
+	return false;
 }

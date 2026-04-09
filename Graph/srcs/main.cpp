@@ -28,6 +28,14 @@ int main()
 	{
 		std::cout << res[i] << " " ;
 	}
+
+	std::cout << std::endl << "dfs: ";
+	
+	std::vector<int> resDFS = g.dfs(4);
+	for (size_t i = 0; i < resDFS.size(); i++)
+	{
+		std::cout << resDFS[i] << " " ;
+	}
 	std::cout << std::endl;
 	std::cout << g << std::endl;
 	return 0;

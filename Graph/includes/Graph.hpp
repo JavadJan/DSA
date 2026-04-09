@@ -9,6 +9,7 @@ class Graph {
 	private:
 		std::vector<std::vector<T> > G;
 		int V;
+		void RDFS(int start, std::vector<bool>& visited, std::vector<int>& res);
 	public:
 		Graph(int v, std::vector<std::vector<T> > &edges);
 		~Graph();

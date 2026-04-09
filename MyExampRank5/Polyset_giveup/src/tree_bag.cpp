@@ -17,12 +17,13 @@ tree_bag& tree_bag::operator=(const tree_bag& b)
 tree_bag::Node* tree_bag::copy(Node* tree)
 {
 	if (!tree) return NULL;
-	Node* newNode = new Node();
+
+	Node* t = new Node();
 	
-	newNode->val = tree->val;
-	newNode->left = copy(tree->left);
-	newNode->right = copy(tree->right);
-	return newNode;
+	t->val = tree->val;
+	t->left = copy(tree->left);
+	t->right = copy(tree->right);
+	return t;
 }
 
 tree_bag::~tree_bag()

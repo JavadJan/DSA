@@ -15,6 +15,7 @@ array_bag::array_bag(const array_bag& b)
 
 array_bag& array_bag::operator=(const array_bag& b)
 {
+	if (this == &b) return *this;
 	this->clear();
 	this->arr = new int[b.size];
 	for (int i = 0; i < b.size; i++)

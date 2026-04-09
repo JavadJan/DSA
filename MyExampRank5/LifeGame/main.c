@@ -46,6 +46,8 @@ int initConfig(struct Board *board)
                 if (board->pen.down) // if pen down then become 1? 
                     board->cells[board->pen.y][board->pen.x] = 1;
             }
+            else if (c == '\n')
+                continue ;
 			else
 			{
 				return 0;		
@@ -89,6 +91,7 @@ void ConwayGame(struct Board *board)
 
     for (int iter = 0; iter < board->iter; iter++)
     {
+        // count niegbor
         for (int y = 0; y < board->height; y++)
         {
             for (int x = 0; x < board->width; x++)
@@ -100,6 +103,7 @@ void ConwayGame(struct Board *board)
                     board->next[y][x] = (neighbors == 3) ? 1 : 0;
             }
         }
+        // copy to real cells
         for (int y = 0; y < board->height; y++)
         {
             for (int x = 0; x < board->width; x++)

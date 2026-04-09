@@ -192,7 +192,7 @@ int read_map(FILE *fp, t_map *map)
 		if (read == -1)
 		{
 			fprintf(stderr, "Failed to read line %d\n", i);
-			for (int j = 0; j < i; j++)
+			for (int j = 0; j <= i; j++)
 				free(map->grid[j]);
 			free(map->grid);
 			map->grid = NULL;

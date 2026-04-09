@@ -63,3 +63,23 @@ std::vector<int> Graph<T>::bfs(int start)
 	}
 	return res;
 }
+template <typename T>
+void Graph<T>::RDFS(int start, std::vector<bool>& visited, std::vector<int>& res)
+{
+	visited[start] = true;
+	res.push_back(start);
+	for(int j = 1; j <= this->V; j++)
+	{
+		if (this->G[start][j] != 0 && !visited[j])
+			RDFS(j, visited, res);
+	}
+}
+
+template <typename T>
+std::vector<int> Graph<T>::dfs(int start)
+{
+	std::vector<bool> visited(this->V, false);
+	std::vector<int> res;
+	RDFS(start, visited, res);
+	return res;
+}
